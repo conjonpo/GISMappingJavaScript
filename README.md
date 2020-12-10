@@ -1,4 +1,4 @@
-# GISMappingJavaScript
+# GIS Mapping
 
 ## Overview
 
