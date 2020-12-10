@@ -10,7 +10,11 @@ The purpose of this website is to demonstrate what can be done with the ArcGIS A
 * ArcGIS Online
 * ArcGIS Pro
 
+Glitch is an online service where HTML, CSS and JavaScript can be written and preview and can be connected to GitHub (though I had trouble connecting to GitHub). ArcGIS Pro is what I made the map in originally and it was uploaded to ArcGIS Online.
+
 ## Execution
+
+
 
 ## Helpful Links
 
