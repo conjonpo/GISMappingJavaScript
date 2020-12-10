@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>
+      My Heritage Maps Demo
+    </title>
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.15/esri/themes/light/main.css"
+    />
+    <script src="https://js.arcgis.com/4.15/"></script>
+  </head>
+  <body>
+    <div id="viewDiv"></div>
+
+    <script>
+      require([
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/layers/FeatureLayer",
+        "esri/widgets/BasemapToggle",
+        "esri/widgets/BasemapGallery"
+      ], function(Map, MapView, FeatureLayer, BasemapToggle, BasemapGallery) {
+        var map = new Map({
+          basemap: "topo-vector"
+        });
+
+        var view = new MapView({
+          container: "viewDiv",
+          map: map,
+          center: [-50, 50], // longitude, latitude
+          zoom: 4
+        });
+
+        var basemapToggle = new BasemapToggle({
+          view: view,
+          nextBasemap: "satellite"
+        });
+
+        var basemapGallery = new BasemapGallery({
+          view: view,
+          source: {
+            portal: {
+              url: "https://www.arcgis.com",
+              useVectorBasemaps: true // Load vector tile basemaps
+            }
+          }
+        });
+
+        function createFillSymbol(value, color) {
+          return {
+            value: value,
+            symbol: {
+              color: color,
+              type: "simple-marker",
+              size: "6px"
+            }
+          };
+        }
+
+        var ConAncestorsRenderer = {
+          type: "unique-value",
+          field: "Line",
+          uniqueValueInfos: [
+            createFillSymbol("Pohlsander", "#FFFFFF"),
+            createFillSymbol("Haws", "#C1C0C0"),
+            createFillSymbol("Conner", "#000000"),
+            createFillSymbol("Hankins", "#D00000")
+          ]
+        };
+        
+        var HayAncestorsRenderer = {
+          type: "unique-value",
+          field: "Line",
+          uniqueValueInfos: [
+            createFillSymbol("Walker", "#00D2FF"),
+            createFillSymbol("Bell", "#47DD8E"),
+            createFillSymbol("Olsen", "#FBA500"),
+            createFillSymbol("Bodily", "#EAE009")
+          ]
+        };
+
+        var popupNames = {
+          title: "{Name}",
+          content:
+            "<b>Birth Date:</b> {BirthDate}<br><b>Location:</b> {Location}<br><b>Line:</b> {Line}<br><b>Generation:</b> {Generation}"
+        };
+
+        // feature layers
+        var HayAncestors = new FeatureLayer({
+          url:
+            "https://services2.arcgis.com/yvwHSwAamLDJNzPK/arcgis/rest/services/Family_History_Map/FeatureServer",
+          outFields: ["Name", "BirthDate", "Location", "Line", "Generation"],
+          popupTemplate: popupNames,
+          renderer: HayAncestorsRenderer
+        });
+
+        var ConAncestors = new FeatureLayer({
+          url:
+            "https://services2.arcgis.com/yvwHSwAamLDJNzPK/arcgis/rest/services/Family_History_Map/FeatureServer/1",
+          outFields: ["Name", "BirthDate", "Location", "Line", "Generation"],
+          popupTemplate: popupNames,
+          renderer: ConAncestorsRenderer
+        });
+
+        map.add(HayAncestors);
+        map.add(ConAncestors);
+        //view.ui.add(basemapGallery, "top-right");
+        view.ui.add(basemapToggle, "bottom-right");
+      });
+    </script>
+  </body>
+</html>
