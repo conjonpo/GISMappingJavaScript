@@ -59,6 +59,10 @@ We also need to add this line of code into the feature variable:
 popupTemplate: popupNames
 ```
 
+Here's what the popup should look like:
+
+![Screenshot of popup](3.jpg)
+
 Lastly, we will need to add symbology to our points. I decided to change the color of the points based on which line of mine and my wife's ancestry each ancestor is from. Here's the code for that:
 ```
         function createFillSymbol(value, color) {
