@@ -14,7 +14,10 @@ Glitch is an online service where HTML, CSS and JavaScript can be written and pr
 
 ## Execution
 
-The first step is to [follow this link](https://developers.arcgis.com/labs/javascript/create-a-starter-app/) and put in the basic JavaScript code into an HTML file on Glitch. 
+The first step is to [follow this link](https://developers.arcgis.com/labs/javascript/create-a-starter-app/) and put in the basic JavaScript code into an HTML file on Glitch. Your website should show just a blank map.
+
+The next step is to add data to your map. The tutorial shows you how to add some data that Esri made, but I added my own data. If you want to add your own data, you will first need to create a map in ArcGIS Online and then use the URL at the bottom of the Overview page, as seen in the screenshot below:
+![Screenshot of URL](1.jpg)
 
 ## Helpful Links
 
