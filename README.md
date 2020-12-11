@@ -19,6 +19,17 @@ The first step is to [follow this link](https://developers.arcgis.com/labs/javas
 The next step is to add data to your map. The tutorial shows you how to add some data that Esri made, but I added my own data. If you want to add your own data, you will first need to create a map in ArcGIS Online and then use the URL at the bottom of the Overview page, as seen in the screenshot below:
 ![Screenshot of URL](1.jpg)
 
+This is the code I used to add layers to the map:
+```
+var HayAncestors = new FeatureLayer({
+     url: "https://services2.arcgis.com/yvwHSwAamLDJNzPK/arcgis/rest/services/Family_History_Map/FeatureServer",
+     });
+
+var ConAncestors = new FeatureLayer({
+     url: "https://services2.arcgis.com/yvwHSwAamLDJNzPK/arcgis/rest/services/Family_History_Map/FeatureServer/1",
+     });
+```
+
 ## Helpful Links
 
 * [https://developers.arcgis.com/labs/](https://developers.arcgis.com/labs/)
