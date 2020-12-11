@@ -59,6 +59,42 @@ We also need to add this line of code into the feature variable:
 popupTemplate: popupNames
 ```
 
+Lastly, we will need to add symbology to our points. I decided to change the color of the points based on which line of mine and my wife's ancestry each ancestor is from. Here's the code for that:
+```
+        function createFillSymbol(value, color) {
+          return {
+            value: value,
+            symbol: {
+              color: color,
+              type: "simple-marker",
+              size: "6px"
+            }
+          };
+        }
+
+        var ConAncestorsRenderer = {
+          type: "unique-value",
+          field: "Line",
+          uniqueValueInfos: [
+            createFillSymbol("Pohlsander", "#FFFFFF"),
+            createFillSymbol("Haws", "#C1C0C0"),
+            createFillSymbol("Conner", "#000000"),
+            createFillSymbol("Hankins", "#D00000")
+          ]
+        };
+        
+        var HayAncestorsRenderer = {
+          type: "unique-value",
+          field: "Line",
+          uniqueValueInfos: [
+            createFillSymbol("Walker", "#00D2FF"),
+            createFillSymbol("Bell", "#47DD8E"),
+            createFillSymbol("Olsen", "#FBA500"),
+            createFillSymbol("Bodily", "#EAE009")
+          ]
+        };
+```
+
 ## Helpful Links
 
 * [https://developers.arcgis.com/labs/](https://developers.arcgis.com/labs/)
