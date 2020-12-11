@@ -16,7 +16,7 @@ Glitch is an online service where HTML, CSS and JavaScript can be written and pr
 
 ## Execution
 
-The first step is to [follow this link](https://developers.arcgis.com/labs/javascript/create-a-starter-app/) and put in the basic JavaScript code into an HTML file on Glitch. Your website should show just a blank map.
+The first step is to [follow this link](https://developers.arcgis.com/labs/javascript/create-a-starter-app/) and put in the basic JavaScript code into an HTML file on Glitch. Your website should show just a blank map. To change the zoom level and the starting coordinates, simply change the values in the code.
 
 The next step is to add data to your map. The tutorial shows you how to add some data that Esri made, but I added my own data. If you want to add your own data, you will first need to create a map in ArcGIS Online and then use the URL at the bottom of the Overview page, as seen in the screenshot below:
 ![Screenshot of URL](1.jpg)
@@ -126,6 +126,10 @@ Make sure to update your feature variable with this code so the symbology will d
           renderer: ConAncestorsRenderer
         });
 ```
+
+And that is how to make an interactive map using JavaScript! This is what my final product looked like:
+
+![Screenshot of final product](4.jpg)
 
 ## Helpful Links
 
