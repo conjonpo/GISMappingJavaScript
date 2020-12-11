@@ -1,6 +1,6 @@
 # GIS Mapping
 
-** Link to the [website and final product](https://cuboid-deep-bassoon.glitch.me/). ** 
+**Link to the [website and final product](https://cuboid-deep-bassoon.glitch.me/).** 
 
 ## Overview
 
