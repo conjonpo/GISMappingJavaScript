@@ -131,6 +131,8 @@ And that is how to make an interactive map using JavaScript! This is what my fin
 
 ![Screenshot of final product](4.jpg)
 
+**Link to the [website and final product](https://cuboid-deep-bassoon.glitch.me/).** 
+
 ## Helpful Links
 
 * [https://developers.arcgis.com/labs/](https://developers.arcgis.com/labs/)
