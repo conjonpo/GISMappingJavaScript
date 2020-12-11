@@ -30,6 +30,16 @@ var ConAncestors = new FeatureLayer({
      });
 ```
 
+This code goes into the script made in the first step.
+
+The next step is to add a way to switch basemaps. I decided to use a basemap toggle using this code:
+```
+var basemapToggle = new BasemapToggle({
+  view: view,
+  nextBasemap: "satellite"
+});
+```
+
 ## Helpful Links
 
 * [https://developers.arcgis.com/labs/](https://developers.arcgis.com/labs/)
