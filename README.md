@@ -41,7 +41,23 @@ var basemapToggle = new BasemapToggle({
 ```
 
 The basemap toggle should be in a the bottom right corner of your map and look like this:
+
 ![Screenshot of basemap toggle](2.jpg)
+
+Next, we are going to add popups to the code so that when a user clicks on a feature it will give more information on that feature. Here is the code needed to do that:
+
+```
+var popupNames = {
+  title: "{Name}",
+  content:
+  "<b>Birth Date:</b> {BirthDate}<br><b>Location:</b> {Location}<br><b>Line:</b> {Line}<br><b>Generation:</b> {Generation}"
+};
+```
+
+We also need to add this line of code into the feature variable:
+```
+popupTemplate: popupNames
+```
 
 ## Helpful Links
 
