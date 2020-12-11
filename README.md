@@ -1,5 +1,7 @@
 # GIS Mapping
 
+** Link to the [website and final product](https://cuboid-deep-bassoon.glitch.me/). ** 
+
 ## Overview
 
 The purpose of this website is to demonstrate what can be done with the ArcGIS API for JavaScript. I have made a map of the birth places mine and my wife's ancestors back seven generations in ArcGIS Pro for another class, but I wanted this map to be on a website and pop-ups to appear when you click on a marker. Since I am a GIS Technician, this project interested me since I want to know what can be done with interactive maps on the web. This is will be a useful skill for work.
@@ -38,6 +40,12 @@ var basemapToggle = new BasemapToggle({
   view: view,
   nextBasemap: "satellite"
 });
+```
+
+We also need to add this code so the basemap toggle will appear on the website:
+
+```
+view.ui.add(basemapToggle, "bottom-right");
 ```
 
 The basemap toggle should be in a the bottom right corner of your map and look like this:
@@ -97,6 +105,26 @@ Lastly, we will need to add symbology to our points. I decided to change the col
             createFillSymbol("Bodily", "#EAE009")
           ]
         };
+```
+
+Make sure to update your feature variable with this code so the symbology will display correctly:
+
+```
+        var HayAncestors = new FeatureLayer({
+          url:
+            "https://services2.arcgis.com/yvwHSwAamLDJNzPK/arcgis/rest/services/Family_History_Map/FeatureServer",
+          outFields: ["Name", "BirthDate", "Location", "Line", "Generation"],
+          popupTemplate: popupNames,
+          renderer: HayAncestorsRenderer
+        });
+
+        var ConAncestors = new FeatureLayer({
+          url:
+            "https://services2.arcgis.com/yvwHSwAamLDJNzPK/arcgis/rest/services/Family_History_Map/FeatureServer/1",
+          outFields: ["Name", "BirthDate", "Location", "Line", "Generation"],
+          popupTemplate: popupNames,
+          renderer: ConAncestorsRenderer
+        });
 ```
 
 ## Helpful Links
