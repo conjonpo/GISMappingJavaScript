@@ -40,6 +40,9 @@ var basemapToggle = new BasemapToggle({
 });
 ```
 
+The basemap toggle should be in a the bottom right corner of your map and look like this:
+![Screenshot of basemap toggle](2.jpg)
+
 ## Helpful Links
 
 * [https://developers.arcgis.com/labs/](https://developers.arcgis.com/labs/)
